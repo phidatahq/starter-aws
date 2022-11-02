@@ -5,9 +5,9 @@ from phidata.utils.env_var import env_var_is_true
 # -*- Workspace settings
 
 # Workspace name: used for naming cloud resources
-ws_name: str = "dp"
+ws_name: str = "starter-aws"
 # Workspace git repo url: used to git-sync DAGs and Charts
-ws_repo: str = "https://github.com/phidatahq/phidata-starter-aws.git"
+ws_repo: str = "https://github.com/phidatahq/starter-aws.git"
 # Path to the workspace directory
 ws_dir_path: Path = Path(__file__).parent.resolve()
 # Path to the root i.e. data platform directory
