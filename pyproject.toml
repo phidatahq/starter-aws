@@ -18,7 +18,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "mypy",
-    "black",
+    "black[jupyter]",
     "pytest",
     "psycopg2-binary",
     "types-requests",
