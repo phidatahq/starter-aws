@@ -15,7 +15,7 @@ dev_images = []
 # Shared image params
 image_tag = "dev"
 image_repo = "phidata"  # Set your image repo
-image_suffix = "dp"  # Set your image name suffix
+image_suffix = "starter-aws"  # Set your image name suffix
 skip_docker_cache = False  # Skip docker cache when building images
 pull_docker_images = False  # Force pull images during FROM
 push_docker_images = True  # Push images to repo after building
