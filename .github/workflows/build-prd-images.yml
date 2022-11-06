@@ -31,7 +31,7 @@ jobs:
           file: workspace/prd/images/airflow.Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: phidata/airflow-aws-dp:prd
+          tags: phidata/airflow-starter-aws:prd
 
   build-superset-prd:
 
@@ -56,7 +56,7 @@ jobs:
           file: workspace/prd/images/superset.Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: phidata/superset-aws-dp:prd
+          tags: phidata/superset-starter-aws:prd
 
   build-jupyter-prd:
 
@@ -81,4 +81,4 @@ jobs:
           file: workspace/prd/images/jupyter.Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: phidata/jupyter-aws-dp:prd
+          tags: phidata/jupyter-starter-aws:prd

@@ -31,7 +31,7 @@ jobs:
           file: workspace/dev/images/airflow.Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: phidata/airflow-aws-dp:dev
+          tags: phidata/airflow-starter-aws:dev
 
   build-superset-dev:
 
@@ -56,7 +56,7 @@ jobs:
           file: workspace/dev/images/superset.Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: phidata/superset-aws-dp:dev
+          tags: phidata/superset-starter-aws:dev
 
   build-jupyter-dev:
 
@@ -81,4 +81,4 @@ jobs:
           file: workspace/dev/images/jupyter.Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: phidata/jupyter-aws-dp:dev
+          tags: phidata/jupyter-starter-aws:dev
