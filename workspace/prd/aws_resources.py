@@ -68,7 +68,7 @@ prd_services_eks_nodegroup = EksNodeGroup(
     max_size=5,
     desired_size=2,
     disk_size=64,
-    instance_types=["m5a.xlarge"],
+    instance_types=["m5.xlarge"],
     eks_cluster=prd_eks_cluster,
     # Run this nodegroup only in "us-east-1a"
     subnet_az=aws_az,
@@ -85,7 +85,7 @@ prd_worker_eks_nodegroup = EksNodeGroup(
     max_size=5,
     desired_size=2,
     disk_size=64,
-    instance_types=["m5a.xlarge"],
+    instance_types=["m5.xlarge"],
     eks_cluster=prd_eks_cluster,
     # Run this nodegroup only in "us-east-1a"
     subnet_az=aws_az,
