@@ -254,16 +254,13 @@ Notes:
 echo "*- Deleting venv"
 rm -rf ~/.venvs/dpenv
 
-echo "*- Deleting af-db-starter-aws-volume volume"
-docker volume rm af-db-starter-aws-volume
-
 echo "*- Recreating venv"
 python3 -m venv ~/.venvs/dpenv
 source ~/.venvs/dpenv/bin/activate
 
 echo "*- Install phi"
 pip install phidata
-phi init
+phi init -r
 
 echo "*- Setup + deploying workspace"
 phi ws setup
