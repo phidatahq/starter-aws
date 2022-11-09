@@ -1,8 +1,6 @@
 ## AWS Data Platform
 
-This repo contains the code for building a data platform on AWS.
-
-We enable 2 data environments:
+This repo contains the code for building a data platform with 2 data environments:
 
 1. dev: A development env running on docker
 2. prd: A production env running on aws + k8s
@@ -43,12 +41,7 @@ cp -r workspace/example_secrets workspace/secrets
 phi ws up
 ```
 
-`phi` will create the following resources:
-
-- Container: `dev-pg-dp-container`
-- Network: `dp`
-
-Optional: If something fails, try running again with debug logs:
+If something fails, try running again with debug logs:
 
 ```sh
 phi ws up -d
@@ -62,10 +55,10 @@ cp example.env .env
 
 ## Using the dev environment
 
-The [workspace/dev](workspace/dev) directory contains the code for the dev resources. The [workspace/settings.py](workspace/settings.py) file can be used to enable the open-source applications like:
+The [workspace/dev](workspace/dev) directory contains the code for the dev resources. The [workspace/settings.py](workspace/settings.py) file can be used to enable other apps like:
 
 1. Postgres App: for storing dev data (runs 1 container)
-2. Airflow App: for running dags & pipelines (runs 5 containers)
+2. Airflow App: for running workflows (runs 5 containers)
 3. Superset App: for visualizing dev data (runs 4 containers)
 
 Update the [workspace/settings.py](workspace/settings.py) file and run:
@@ -261,8 +254,8 @@ Notes:
 echo "*- Deleting venv"
 rm -rf ~/.venvs/dpenv
 
-echo "*- Deleting af-db-dp-volume volume"
-docker volume rm af-db-dp-volume
+echo "*- Deleting af-db-starter-aws-volume volume"
+docker volume rm af-db-starter-aws-volume
 
 echo "*- Recreating venv"
 python3 -m venv ~/.venvs/dpenv
