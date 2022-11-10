@@ -111,7 +111,7 @@ traefik_ingress_route = IngressRoute(
         # Use a Network LoadBalancer
         # reference: https://kubernetes.io/docs/concepts/services-networking/service/#aws-nlb-support
         "service.beta.kubernetes.io/aws-load-balancer-type": "nlb",
-        "service.beta.kubernetes.io/aws-load-balancer-nlb-target-type": "ip",
+        "service.beta.kubernetes.io/aws-load-balancer-nlb-target-type": "instance",
         # To make the load balancer internal. Set internal = "true"
         # reference: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
         # "service.beta.kubernetes.io/aws-load-balancer-internal": "true",
