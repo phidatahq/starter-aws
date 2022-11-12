@@ -96,18 +96,18 @@ prd_worker_eks_nodegroup = EksNodeGroup(
 )
 
 # -*- ACM certificate for domain
-prd_aws_dp_certificate = AcmCertificate(
-    name=prd_domain,
-    domain_name=prd_domain,
-    subject_alternative_names=[f"*.{prd_domain}"],
-    store_cert_summary=True,
-    certificate_summary_file=ws_dir_path.joinpath("aws", "acm", prd_domain),
-    skip_delete=aws_skip_delete,
-)
+# prd_aws_dp_certificate = AcmCertificate(
+#     name=prd_domain,
+#     domain_name=prd_domain,
+#     subject_alternative_names=[f"*.{prd_domain}"],
+#     store_cert_summary=True,
+#     certificate_summary_file=ws_dir_path.joinpath("aws", "acm", prd_domain),
+#     skip_delete=aws_skip_delete,
+# )
 
 prd_aws_resources = AwsResourceGroup(
     name=prd_key,
-    acm_certificates=[prd_aws_dp_certificate],
+    # acm_certificates=[prd_aws_dp_certificate],
     s3_buckets=[prd_logs_s3_bucket, prd_data_s3_bucket],
     cloudformation_stacks=[prd_vpc_stack],
     eks_cluster=prd_eks_cluster,

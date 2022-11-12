@@ -66,7 +66,7 @@ wait_for_db: bool = True
 # waits for superset-redis to be ready before starting app
 wait_for_redis: bool = True
 # Mount the ws_repo using git-sync
-mount_workspace: bool = True
+mount_workspace: bool = False
 # Mount the main branch
 git_sync_branch: str = "main"
 # Read env variables from env/prd_superset_env.yml
