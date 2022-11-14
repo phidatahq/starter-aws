@@ -165,7 +165,7 @@ prd_superset_worker = SupersetWorker(
 
 # Superset worker beat
 prd_superset_worker_beat = SupersetWorkerBeat(
-    replicas=1,
+    replicas=2,
     enabled=superset_enabled,
     image_name=prd_superset_image.name,
     image_tag=prd_superset_image.tag,
