@@ -91,7 +91,7 @@ if jupyter_enabled:
 
 traefik_name = "traefik"
 traefik_ingress_route = IngressRoute(
-    replicas=3,
+    replicas=5,
     name=traefik_name,
     enabled=traefik_enabled,
     web_enabled=True,
