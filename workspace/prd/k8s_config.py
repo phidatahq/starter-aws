@@ -1,6 +1,6 @@
 from phidata.infra.k8s.config import K8sConfig
 
-from workspace.prd.settings import prd_env
+from workspace.settings import prd_env
 from workspace.prd.airflow import prd_airflow_apps
 from workspace.prd.aws_resources import prd_eks_cluster
 from workspace.prd.superset import prd_superset_apps

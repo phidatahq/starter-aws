@@ -1,7 +1,7 @@
 from phidata.infra.aws.config import AwsResourceGroup
 from phidata.infra.aws.resource.s3.bucket import S3Bucket
 
-from workspace.dev.settings import dev_key
+from workspace.settings import dev_key
 
 # -*- AWS resources
 

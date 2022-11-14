@@ -1,7 +1,6 @@
 from phidata.workspace import WorkspaceConfig
 
-from workspace.settings import aws_region
-from workspace.dev.settings import dev_env
+from workspace.settings import aws_region, dev_env
 from workspace.dev.aws_config import dev_aws_config
 from workspace.dev.docker_config import dev_docker_config
 from workspace.prd.aws_config import prd_aws_config

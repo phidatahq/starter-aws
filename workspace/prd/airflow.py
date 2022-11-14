@@ -6,33 +6,30 @@ from phidata.app.airflow import (
     AirflowScheduler,
     AirflowWorker,
     AirflowFlower,
-    ImagePullPolicy,
 )
 from phidata.app.postgres import PostgresDb, PostgresVolumeType
 from phidata.app.redis import Redis, RedisVolumeType
 from phidata.infra.aws.resource.group import AwsResourceGroup
 from phidata.infra.aws.resource.ec2.volume import EbsVolume
 
-from workspace.settings import (
-    aws_az,
-    aws_region,
-    airflow_enabled,
-    use_cache,
-    ws_repo,
-    ws_dir_path,
-)
 from workspace.prd.aws_resources import prd_logs_s3_bucket
 from workspace.prd.pg_dbs import prd_db_airflow_connections
 from workspace.prd.images import prd_airflow_image
-from workspace.prd.settings import (
+from workspace.settings import (
+    airflow_enabled,
+    aws_az,
+    aws_region,
+    prd_domain,
     prd_key,
     prd_tags,
-    prd_domain,
     services_ng_label,
-    workers_ng_label,
     topology_spread_key,
     topology_spread_max_skew,
     topology_spread_when_unsatisfiable,
+    use_cache,
+    workers_ng_label,
+    ws_dir_path,
+    ws_repo,
 )
 
 # -*- AWS resources
@@ -119,11 +116,10 @@ prd_airflow_redis = Redis(
 
 # Airflow webserver
 prd_airflow_ws = AirflowWebserver(
-    replicas=2,
+    replicas=3,
     enabled=airflow_enabled,
     image_name=prd_airflow_image.name,
     image_tag=prd_airflow_image.tag,
-    image_pull_policy=ImagePullPolicy.ALWAYS,
     db_app=prd_airflow_db,
     wait_for_db=wait_for_db,
     redis_app=prd_airflow_redis,
@@ -149,11 +145,10 @@ prd_airflow_ws = AirflowWebserver(
 
 # Airflow scheduler
 prd_airflow_scheduler = AirflowScheduler(
-    replicas=2,
+    replicas=3,
     enabled=airflow_enabled,
     image_name=prd_airflow_image.name,
     image_tag=prd_airflow_image.tag,
-    image_pull_policy=ImagePullPolicy.ALWAYS,
     db_app=prd_airflow_db,
     wait_for_db=wait_for_db,
     redis_app=prd_airflow_redis,
@@ -188,7 +183,6 @@ prd_airflow_worker = AirflowWorker(
     queue_name="default,tier_1",
     image_name=prd_airflow_image.name,
     image_tag=prd_airflow_image.tag,
-    image_pull_policy=ImagePullPolicy.ALWAYS,
     db_app=prd_airflow_db,
     wait_for_db=wait_for_db,
     redis_app=prd_airflow_redis,
@@ -219,7 +213,6 @@ prd_airflow_flower = AirflowFlower(
     enabled=airflow_enabled,
     image_name=prd_airflow_image.name,
     image_tag=prd_airflow_image.tag,
-    image_pull_policy=ImagePullPolicy.ALWAYS,
     db_app=prd_airflow_db,
     wait_for_db=wait_for_db,
     redis_app=prd_airflow_redis,

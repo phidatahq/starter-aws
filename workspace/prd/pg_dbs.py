@@ -2,11 +2,14 @@ from phidata.app.postgres import PostgresDb, PostgresVolumeType
 from phidata.infra.aws.resource.group import AwsResourceGroup
 from phidata.infra.aws.resource.ec2.volume import EbsVolume
 
-from workspace.settings import aws_az, ws_name, ws_dir_path, pg_dbs_enabled
-from workspace.prd.settings import (
+from workspace.settings import (
+    aws_az,
+    pg_dbs_enabled,
     prd_key,
     prd_tags,
     services_ng_label,
+    ws_dir_path,
+    ws_name,
 )
 
 # -*- AWS resources

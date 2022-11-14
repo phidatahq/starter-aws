@@ -1,6 +1,6 @@
 from phidata.infra.aws.config import AwsConfig
 
-from workspace.dev.settings import dev_env
+from workspace.settings import dev_env
 from workspace.dev.aws_resources import dev_aws_resources
 
 

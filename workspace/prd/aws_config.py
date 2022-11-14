@@ -1,6 +1,6 @@
 from phidata.infra.aws.config import AwsConfig
 
-from workspace.prd.settings import prd_env
+from workspace.settings import prd_env
 from workspace.prd.aws_resources import prd_aws_resources
 from workspace.prd.airflow import prd_airflow_aws_resources
 from workspace.prd.superset import prd_superset_aws_resources
