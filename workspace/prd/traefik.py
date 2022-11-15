@@ -1,6 +1,6 @@
 from phidata.app.traefik import IngressRoute, ServiceType
 
-# from workspace.prd.aws_resources import prd_aws_dp_certificate
+# from workspace.prd.aws_resources import prd_domain_certificate
 from workspace.prd.airflow import prd_airflow_ws, prd_airflow_flower
 from workspace.prd.superset import prd_superset_ws
 from workspace.prd.jupyter import prd_jupyter
@@ -101,7 +101,7 @@ traefik_ingress_route = IngressRoute(
     # websecure_routes=routes,
     # forward_web_to_websecure=True,
     # Read ACM certificate from a summary file and add the certificate ARN to the service_annotations
-    # acm_certificate_summary_file=prd_aws_dp_certificate.certificate_summary_file,
+    # acm_certificate_summary_file=prd_domain_certificate.certificate_summary_file,
     # Use a LoadBalancer service
     service_type=ServiceType.LOAD_BALANCER,
     # Configure the LoadBalancer using annotations:

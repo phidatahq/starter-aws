@@ -92,8 +92,8 @@ prd_worker_eks_nodegroup = EksNodeGroup(
 )
 
 # -*- ACM certificate for domain
-prd_aws_dp_certificate = AcmCertificate(
-    name=prd_domain,
+prd_domain_certificate = AcmCertificate(
+    name=f"{prd_domain}-cert",
     domain_name=prd_domain,
     subject_alternative_names=[f"*.{prd_domain}"],
     store_cert_summary=True,
@@ -108,5 +108,5 @@ prd_aws_resources = AwsResourceGroup(
     eks_cluster=prd_eks_cluster,
     eks_kubeconfig=prd_eks_kubeconfig,
     eks_nodegroups=[prd_services_eks_nodegroup, prd_worker_eks_nodegroup],
-    # acm_certificates=[prd_aws_dp_certificate],
+    # acm_certificates=[prd_domain_certificate],
 )
