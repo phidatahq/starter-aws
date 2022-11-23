@@ -9,7 +9,7 @@ authors = [
 
 dependencies = [
     "pandas",
-    "phidata[aws]>=0.3.10",
+    "phidata[aws]>=0.3.11",
     "requests",
     "sqlalchemy",
 ]
